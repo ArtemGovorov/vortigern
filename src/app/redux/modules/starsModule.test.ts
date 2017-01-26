@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { fetchMock, mockStore } from 'helpers/TestHelper.tsx';
+import { fetchMock, mockStore } from '../../helpers/TestHelper';
 import * as stars from './starsModule';
 import { IStarsAction } from 'models/starsModel';
 
@@ -40,9 +40,9 @@ describe('Stars Module', () => {
         const store = mockStore({});
 
         store.dispatch(stars.getStars())
-          .then(() => expect(store.getActions()).to.eql(expectedActions))
-          .then(() => done())
-          .catch((err) => done(err));
+			.then(() => expect(store.getActions()).to.eql(expectedActions))
+			.then(() => done())
+			.catch((err) => done(err));
       });
 
       /** 400 */
@@ -61,9 +61,9 @@ describe('Stars Module', () => {
         const store = mockStore({});
 
         store.dispatch(stars.getStars())
-          .then(() => expect(store.getActions()).to.eql(expectedActions))
-          .then(() => done())
-          .catch((err) => done(err));
+			.then(() => expect(store.getActions()).to.eql(expectedActions))
+			.then(() => done())
+			.catch((err) => done(err));
       });
 
     });
